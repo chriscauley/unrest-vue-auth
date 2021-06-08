@@ -10,6 +10,7 @@
   },
   "peerDependencies": {
     "@unrest/css": "^0.0.6",
+    "@unrest/vue-reactive-storage": "^0.0.1",
     "vue": "^3.0.5"
   },
   "devDependencies": {
@@ -20,9 +21,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0-0",
+    "prettier": "1.18.2",
     "vite": "2.3.3"
-  },
-  "dependencies": {
-    "prettier": "1.18.2"
   }
 }
