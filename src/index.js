@@ -29,8 +29,8 @@ const auth = {
   plugin: {
     install: (app, _options) => {
       app.config.globalProperties.$auth = auth;
-      app.component("UrAuthMenu", AuthMenu);
-      app.component("UrAuthSocialLinks", AuthSocialLinks);
+      app.component("UnrestAuthMenu", AuthMenu);
+      app.component("UnrestAuthSocialLinks", AuthSocialLinks);
 
       const { $store, $router } = app.config.globalProperties;
       if ($store) {

@@ -15,7 +15,10 @@ import config from "./config";
 
 export default {
   props: {
-    items: Array
+    items: {
+      type: Array,
+      default: () => []
+    }
   },
   computed: {
     user() {

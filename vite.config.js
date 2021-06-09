@@ -10,12 +10,13 @@ export default defineConfig({
       name: '@unrest/vue-auth'
     },
     rollupOptions: {
-      external: ['vue', '@unrest/css', '@unrest/vue-reactive-storage'],
+      external: ['vue', '@unrest/css', '@unrest/vue-reactive-storage', 'querystring'],
       output: {
         globals: {
           vue: 'Vue',
           '@unrest/css': 'UnrestCss',
           '@unrest/vue-reactive-storage': 'UnrestVueReactiveStorage',
+          querystring: 'querystring',
         }
       }
     }
