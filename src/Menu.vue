@@ -1,12 +1,18 @@
 <template>
-  <ur-dropdown v-if="user" :items="dropdown_items" :title="user.username" />
-  <div v-else>
-    <router-link to="/auth/login/" class="btn -link">
-      Log In
-    </router-link>
-    <router-link to="/auth/sign-up/" class="btn -link">
-      Sign Up
-    </router-link>
+  <div class="unrest-auth-menu" v-show="$auth.ready">
+    <unrest-dropdown
+      v-if="$auth.user"
+      :items="dropdown_items"
+      :title="$auth.user.username"
+    />
+    <div v-else>
+      <router-link to="/auth/login/" class="btn -link">
+        Log In
+      </router-link>
+      <router-link to="/auth/sign-up/" class="btn -link">
+        Sign Up
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -21,9 +27,6 @@ export default {
     }
   },
   computed: {
-    user() {
-      return this.$store.auth.get();
-    },
     dropdown_items() {
       const { AUTH_START } = config;
       const click = () =>

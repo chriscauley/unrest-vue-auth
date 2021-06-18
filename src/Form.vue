@@ -2,15 +2,22 @@
   <div :class="css.modal.outer('-relative')">
     <div :class="css.modal.content('-auto')">
       <h2>{{ mode.title }}</h2>
-      <schema-form :form_name="mode.form_name" :success="success" />
+      <unrest-schema-form :form_name="mode.form_name" :success="success" />
       <unrest-auth-social-links />
     </div>
   </div>
 </template>
 
 <script>
-import css from "@unrest/css";
+// import css from "@unrest/css";
 import config from "./config";
+
+const css = {
+  modal: {
+    outer: s => `modal ${s}`,
+    content: s => `modal-content ${s}`
+  }
+};
 
 export default {
   __route: {

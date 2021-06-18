@@ -1,6 +1,6 @@
 import { ReactiveRestApi } from "@unrest/vue-reactive-storage";
 
-const api = ReactiveRestApi();
+const api = ReactiveRestApi({});
 
 api.state.ready = false;
 

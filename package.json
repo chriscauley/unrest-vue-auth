@@ -2,11 +2,19 @@
   "name": "@unrest/vue-auth",
   "author": "Chris Cauley <cauley.chris@gmail.com>",
   "version": "0.0.2",
-  "main": "dist/vue-auth.es",
   "license": "MIT",
   "scripts": {
     "build": "vite build",
     "lint": "eslint src/* src/**/*"
+  },
+  "files": ["dist"],
+  "main": "./dist/vue-auth.umd.js",
+  "module": "./dist/vue-auth.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-auth.es.js",
+      "require": "./dist/vue-auth.umd.js"
+    }
   },
   "dependencies": {
     "@unrest/css": "^0.0.6",
