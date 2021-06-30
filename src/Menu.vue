@@ -1,5 +1,5 @@
 <template>
-  <div class="unrest-auth-menu" v-show="$auth.ready">
+  <div v-if="enabled" class="unrest-auth-menu" v-show="$auth.ready">
     <unrest-dropdown
       v-if="$auth.user"
       :items="dropdown_items"
@@ -27,6 +27,9 @@ export default {
     }
   },
   computed: {
+    enabled() {
+      return config.enabled;
+    },
     dropdown_items() {
       const { AUTH_START } = config;
       const click = () =>

@@ -10,7 +10,20 @@ const auth = {
   AuthMenu,
   AuthSocialLinks,
   config,
+  configure: _config => {
+    Object.assign(config, _config);
+    if (config.enabled && store.api.state.user?.id === "offline") {
+      store.api.state.user = null;
+      store.api.state.ready = false;
+    } else if (!config.enabled) {
+      store.api.state.user = { id: "offline" };
+      store.api.state.ready = true;
+    }
+  },
   ...store,
+  get enabled() {
+    return config.enabled;
+  },
   get user() {
     return store.get();
   },
