@@ -96,6 +96,18 @@
   resolved "https://registry.yarnpkg.com/@unrest/css/-/css-0.0.6.tgz#7736b05a7ad36fc30bfe49eeebbf73344922046c"
   integrity sha512-0RMTFBTLN1IGzPpCSoAXtjM/coa4ghBrr5VjD41F9PxaXchyNcT6wONe8gqkzsl9+k7glZWCR0HsET9Sz0Jtxg==
 
+"@unrest/eslint-config@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@unrest/eslint-config/-/eslint-config-0.0.4.tgz#c4a2d0c492884eba0cc189fb0b024a76f1cbca45"
+  integrity sha512-8shKwIh4P+3fyywpfPrIPkWZ2MLpTR2OTIDN7ePLAP09FUHH7iYWtMwqW7uwcOieh3IDDSu2lNFyUknQM6RdZA==
+  dependencies:
+    babel-eslint "^10.1.0"
+    eslint "^6.7.2"
+    eslint-config-prettier "^8.1.0"
+    eslint-plugin-prettier "^3.3.1"
+    eslint-plugin-vue "^7.0.0-0"
+    prettier "^1.18.2"
+
 "@unrest/vue-reactive-storage@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@unrest/vue-reactive-storage/-/vue-reactive-storage-0.0.1.tgz#b31d4e1f52045ec20a49b31cd5e6afbd0dbb29fa"
@@ -1105,10 +1117,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@1.18.2:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
-  integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
+prettier@^1.18.2:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
+  integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
 progress@^2.0.0:
   version "2.0.3"
