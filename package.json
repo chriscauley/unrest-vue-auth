@@ -1,7 +1,7 @@
 {
   "name": "@unrest/vue-auth",
   "author": "Chris Cauley <cauley.chris@gmail.com>",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "scripts": {
     "build": "vite build",
@@ -21,7 +21,7 @@
   "peerDependencies": {
     "@unrest/css": "^0.0.6",
     "@unrest/vue": "^0.1.3",
-    "@unrest/vue-storage": "^0.0.1",
+    "@unrest/vue-storage": "^0.0.5",
     "vue": "^3.0.5"
   },
   "devDependencies": {
