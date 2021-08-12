@@ -1,7 +1,7 @@
 {
   "name": "@unrest/vue-auth",
   "author": "Chris Cauley <cauley.chris@gmail.com>",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "scripts": {
     "build": "vite build",
