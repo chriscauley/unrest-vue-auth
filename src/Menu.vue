@@ -3,8 +3,17 @@
     <unrest-dropdown
       v-if="$auth.user"
       :items="dropdown_items"
-      :title="$auth.user.username"
-    />
+      offset="16,7"
+      placement="bottom-end"
+      >
+      <div class="unrest-auth-menu__trigger">
+        <div v-if="$auth.user.avatar_url" class="avatar">
+          <img :src="$auth.user.avatar_url" />
+        </div>
+        <i class="fa fa-user" v-else />
+        {{ $auth.user.username }}
+      </div>
+    </unrest-dropdown>
     <div v-else>
       <router-link to="/auth/login/" class="btn -link">
         Log In
@@ -18,6 +27,7 @@
 
 <script>
 import config from "./config";
+import store from './store';
 
 export default {
   props: {

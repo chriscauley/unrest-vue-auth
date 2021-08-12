@@ -33,7 +33,7 @@ const auth = {
   },
   routes: [
     {
-      path: "/auth/:slug/",
+      path: "/auth/:auth_mode/",
       name: "auth",
       component: AuthForm,
       meta: { authRedirect: true }

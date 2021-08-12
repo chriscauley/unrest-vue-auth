@@ -1,7 +1,7 @@
 <template>
-  <div v-if="providers">
-    <div className="my-4 text-center">-- Or Connect With --</div>
-    <div className="flex justify-center mb-4">
+  <div v-if="providers" class="unrest-auth-social">
+    <div className="unrest-auth-social__or">-- Or Connect With --</div>
+    <div className="unrest-auth-social__buttons">
       <a
         v-for="provider in providers"
         :href="provider.href"
@@ -34,7 +34,7 @@ export default {
       return {
         title: slug[0].toUpperCase() + slug.slice(1),
         href: `/login/${slug}/?${qs}`,
-        class: `btn btn-${slug} mx-4`,
+        class: `btn btn-${slug}`,
         ...provider
       };
     }

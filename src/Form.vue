@@ -1,9 +1,11 @@
 <template>
-  <div :class="css.modal.outer('-relative')">
+  <div :class="css.modal.outer('-relative unrest-auth')">
     <div :class="css.modal.content('-auto')">
       <h2>{{ mode.title }}</h2>
+      <p v-if="mode.text">{{ mode.text }}</p>
       <unrest-schema-form :form_name="mode.form_name" :success="success" />
       <unrest-auth-social-links />
+      <div v-if="mode.extra" v-is="mode.extra" />
     </div>
   </div>
 </template>
@@ -27,11 +29,8 @@ export default {
     return { css };
   },
   computed: {
-    slug() {
-      return this.$route.path.match(/(login|sign-up|forgot-password)/)[1];
-    },
     mode() {
-      return config.modes.find(m => m.slug === this.slug);
+      return config.modes.find(m => m.slug === this.$route.params.auth_mode);
     }
   },
   methods: {
