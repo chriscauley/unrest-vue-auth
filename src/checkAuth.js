@@ -2,16 +2,31 @@ import store from "./store";
 import config from "./config";
 
 const requireAuth = (to, next) => {
-  store.get()
-    ? next()
-    : next({
-        path: config.AUTH_START,
-        query: { next: to.fullPath }
-      });
+  const user = store.get()
+  if (user) {
+    next()
+    return
+  }
+  if (to.path === config.AUTH_START) {
+    throw '@unrest/vue-auth detected cyclic redirect'
+  }
+  next({
+    path: config.AUTH_START,
+    query: { next: to.fullPath }
+  });
 };
 
 const redirectIfAuthed = (to, next) => {
-  store.get() ? next(to.query.next || config.AUTH_REDIRECT) : next();
+  const user = store.get()
+  if (user) {
+    const url = to.query.next || config.AUTH_REDIRECT
+    if (to.path === url) {
+      throw '@unrest/vue-auth detected cyclic redirect'
+    }
+    next(url)
+    return
+  }
+  next()
 };
 
 export default (to, from, next) => {

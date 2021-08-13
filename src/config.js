@@ -1,5 +1,5 @@
 const config = {
-  AUTH_START: "/login/",
+  AUTH_START: "/auth/login/",
   AUTH_REDIRECT: "/",
   enabled: true,
   modes: [
