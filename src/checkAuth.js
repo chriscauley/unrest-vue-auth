@@ -2,13 +2,13 @@ import store from "./store";
 import config from "./config";
 
 const requireAuth = (to, next) => {
-  const user = store.get()
+  const user = store.get();
   if (user) {
-    next()
-    return
+    next();
+    return;
   }
   if (to.path === config.AUTH_START) {
-    throw '@unrest/vue-auth detected cyclic redirect'
+    throw "@unrest/vue-auth detected cyclic redirect";
   }
   next({
     path: config.AUTH_START,
@@ -17,16 +17,16 @@ const requireAuth = (to, next) => {
 };
 
 const redirectIfAuthed = (to, next) => {
-  const user = store.get()
+  const user = store.get();
   if (user) {
-    const url = to.query.next || config.AUTH_REDIRECT
+    const url = to.query.next || config.AUTH_REDIRECT;
     if (to.path === url) {
-      throw '@unrest/vue-auth detected cyclic redirect'
+      throw "@unrest/vue-auth detected cyclic redirect";
     }
-    next(url)
-    return
+    next(url);
+    return;
   }
-  next()
+  next();
 };
 
 export default (to, from, next) => {

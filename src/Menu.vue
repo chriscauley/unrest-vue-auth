@@ -5,7 +5,7 @@
       :items="dropdown_items"
       offset="16,7"
       placement="bottom-end"
-      >
+    >
       <div class="unrest-auth-menu__trigger">
         <div v-if="$auth.user.avatar_url" class="avatar">
           <img :src="$auth.user.avatar_url" />
@@ -27,7 +27,6 @@
 
 <script>
 import config from "./config";
-import store from './store';
 
 export default {
   props: {

@@ -3,7 +3,11 @@
     <div :class="css.modal.content('-auto')">
       <h2>{{ mode.title }}</h2>
       <p v-if="mode.text">{{ mode.text }}</p>
-      <unrest-schema-form :form_name="mode.form_name" :success="success" @error="onError"/>
+      <unrest-schema-form
+        :form_name="mode.form_name"
+        :success="success"
+        @error="onError"
+      />
       <unrest-auth-social-links />
       <div v-if="mode.extra" v-is="mode.extra" />
     </div>
@@ -35,7 +39,7 @@ export default {
   },
   methods: {
     onError(error) {
-      config.onError?.(error)
+      config.onError?.(error);
     },
     success() {
       // reload route to cause router to redirect to next or /
