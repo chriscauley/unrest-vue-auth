@@ -44,9 +44,8 @@ export default {
     success() {
       // reload route to cause router to redirect to next or /
       this.$auth.markStale();
-      this.$auth
-        .fetch()
-        .then(() => this.$router.replace(this.$route.query.next || "/"));
+      const next = this.mode.next || this.$route.query.next || "/";
+      this.$auth.fetch().then(() => this.$router.replace(next));
     }
   }
 };
