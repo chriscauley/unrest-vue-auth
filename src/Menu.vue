@@ -6,7 +6,7 @@
       offset="16,7"
       placement="bottom-end"
     >
-      <div class="unrest-auth-menu__trigger">
+      <div class="btn -text">
         <div v-if="$auth.user.avatar_url" class="avatar">
           <img :src="$auth.user.avatar_url" />
         </div>
