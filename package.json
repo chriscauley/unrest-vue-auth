@@ -2,7 +2,7 @@
   "name": "@unrest/vue-auth",
   "author": "Chris Cauley <cauley.chris@gmail.com>",
   "repository": "https://github.com/chriscauley/unrest-vue-auth",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "files": [
     "dist"
