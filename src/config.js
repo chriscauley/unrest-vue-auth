@@ -5,17 +5,17 @@ const config = {
   modes: [
     {
       slug: "login",
-      form_name: "schema/LoginForm",
+      form_name: "schema/login",
       title: "Login"
     },
     {
       slug: "sign-up",
-      form_name: "schema/SignUpForm",
+      form_name: "schema/sign-up",
       title: "Sign Up"
     },
     {
       slug: "reset-password",
-      form_name: "schema/ResetPassword",
+      form_name: "schema/reset-password",
       title: "Reset Password"
     }
   ]
