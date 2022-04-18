@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// import css from "@unrest/css";
 import config from "./config";
 
 const css = {
