@@ -1,5 +1,5 @@
 <template>
-  <div v-if="providers" class="unrest-auth-social">
+  <div v-if="providers?.length" class="unrest-auth-social">
     <div className="unrest-auth-social__or">-- Or Connect With --</div>
     <div className="unrest-auth-social__buttons">
       <a

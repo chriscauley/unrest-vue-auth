@@ -2,6 +2,8 @@ const config = {
   AUTH_START: "/auth/login/",
   AUTH_REDIRECT: "/",
   enabled: true,
+  signup_enabled: true,
+  getDisplayName: (user) => user.username,
   modes: [
     {
       slug: "login",

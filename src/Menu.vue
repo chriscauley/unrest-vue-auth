@@ -11,14 +11,14 @@
           <img :src="$auth.user.avatar_url" />
         </div>
         <i class="fa fa-user" v-else />
-        {{ $auth.user.username }}
+        {{ display_name }}
       </div>
     </unrest-dropdown>
     <div v-else>
       <router-link to="/auth/login/" class="btn -link">
         Log In
       </router-link>
-      <router-link to="/auth/sign-up/" class="btn -link">
+      <router-link to="/auth/sign-up/" class="btn -link" v-if="signup_enabled">
         Sign Up
       </router-link>
     </div>
@@ -36,6 +36,12 @@ export default {
     }
   },
   computed: {
+    signup_enabled() {
+      return config.signup_enabled
+    },
+    display_name() {
+      return config.getDisplayName(this.$auth.user)
+    },
     enabled() {
       return config.enabled;
     },
