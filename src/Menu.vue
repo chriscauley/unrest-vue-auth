@@ -1,11 +1,6 @@
 <template>
   <div v-if="enabled" class="unrest-auth-menu" v-show="$auth.ready">
-    <unrest-dropdown
-      v-if="$auth.user"
-      :items="dropdown_items"
-      offset="16,7"
-      placement="bottom-end"
-    >
+    <unrest-dropdown v-if="$auth.user" :items="dropdown_items" offset="16,7" placement="bottom-end">
       <div class="btn -text">
         <div v-if="$auth.user.avatar_url" class="avatar">
           <img :src="$auth.user.avatar_url" />
@@ -15,9 +10,7 @@
       </div>
     </unrest-dropdown>
     <div v-else>
-      <router-link to="/auth/login/" class="btn -link">
-        Log In
-      </router-link>
+      <router-link to="/auth/login/" class="btn -link"> Log In </router-link>
       <router-link to="/auth/sign-up/" class="btn -link" v-if="signup_enabled">
         Sign Up
       </router-link>
@@ -26,14 +19,15 @@
 </template>
 
 <script>
-import config from "./config";
+import config from './config'
 
 export default {
+  name: 'UnrestAuthMenu',
   props: {
     items: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   computed: {
     signup_enabled() {
@@ -43,14 +37,13 @@ export default {
       return config.getDisplayName(this.$auth.user)
     },
     enabled() {
-      return config.enabled;
+      return config.enabled
     },
     dropdown_items() {
-      const { AUTH_START } = config;
-      const click = () =>
-        this.$auth.logout().then(() => this.$router.push(AUTH_START));
-      return [...this.items, { text: "Logout", click }];
-    }
-  }
-};
+      const { AUTH_START } = config
+      const click = () => this.$auth.logout().then(() => this.$router.push(AUTH_START))
+      return [...this.items, { text: 'Logout', click }]
+    },
+  },
+}
 </script>

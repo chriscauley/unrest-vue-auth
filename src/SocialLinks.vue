@@ -15,29 +15,29 @@
 </template>
 
 <script>
-import config from "./config";
-import querystring from "querystring";
+import config from './config'
+import querystring from 'querystring'
 
 export default {
   computed: {
     providers() {
-      return config.oauth_providers?.map(this.processProvider);
-    }
+      return config.oauth_providers?.map(this.processProvider)
+    },
   },
   methods: {
     processProvider(provider) {
-      const qs = querystring.stringify({ next: this.$route.next });
-      if (typeof provider === "string") {
-        provider = { slug: provider };
+      const qs = querystring.stringify({ next: this.$route.next })
+      if (typeof provider === 'string') {
+        provider = { slug: provider }
       }
-      const { slug } = provider;
+      const { slug } = provider
       return {
         title: slug[0].toUpperCase() + slug.slice(1),
         href: `/login/${slug}/?${qs}`,
         class: `btn btn-${slug}`,
-        ...provider
-      };
-    }
-  }
-};
+        ...provider,
+      }
+    },
+  },
+}
 </script>

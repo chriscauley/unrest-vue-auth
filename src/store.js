@@ -1,39 +1,37 @@
-import { ReactiveRestApi } from "@unrest/vue-storage";
-import config from "./config";
+import { ReactiveRestApi } from '@unrest/vue-storage'
+import config from './config'
 
-const api = ReactiveRestApi({});
+const api = ReactiveRestApi({})
 
-api.state.ready = false;
+api.state.ready = false
 
 const fetch = () => {
   if (!config.enabled) {
-    return Promise.resolve(api.state.user);
+    return Promise.resolve(api.state.user)
   }
-  return api.fetch("auth/user.json").then(({ user }) => {
-    api.state.ready = true;
-    return user;
-  });
-};
+  return api.fetch('auth/user.json').then(({ user }) => {
+    api.state.ready = true
+    return user
+  })
+}
 
 const get = () => {
   if (!config.enabled) {
-    return api.state.user;
+    return api.state.user
   }
-  fetch();
-  return api.get("auth/user.json")?.user;
-};
+  fetch()
+  return api.get('auth/user.json')?.user
+}
 const logout = () => {
-  return config.enabled
-    ? api.fetch("auth/logout/").then(refetch)
-    : Promise.resolve();
-};
+  return config.enabled ? api.fetch('auth/logout/').then(refetch) : Promise.resolve()
+}
 const refetch = () => {
   if (!config.enabled) {
-    return Promise.resolve(api.state.user);
+    return Promise.resolve(api.state.user)
   }
-  api.markStale();
-  return fetch();
-};
+  api.markStale()
+  return fetch()
+}
 
 export default {
   api,
@@ -41,5 +39,5 @@ export default {
   fetch,
   logout,
   refetch,
-  markStale: api.markStale
-};
+  markStale: api.markStale,
+}
